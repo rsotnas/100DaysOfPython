@@ -1,65 +1,13 @@
 import random
+import hangman_art
+import hangman_words
 
-word_list = ['ardvark', 'babboon', 'camel']
+print(hangman_art.logo)
+
+word_list = hangman_words.word_list
 word = random.choice(word_list)
 display = []
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
-
+stages = hangman_art.stages
 for _ in word:
     display.append('_')
 

@@ -7,6 +7,7 @@ print(hangman_art.logo)
 word_list = hangman_words.word_list
 word = random.choice(word_list)
 display = []
+guessed_letters = set()
 stages = hangman_art.stages
 for _ in word:
     display.append('_')
@@ -21,11 +22,12 @@ while flag:
         if word[i] == guess:
             display[i] = guess
             found_anything = True
-    if not found_anything:
+    if not found_anything and guess not in guessed_letters:
         have_lives -= 1
         print(stages[have_lives])
     print(''.join(display))
-
+    print(f'Guessed letters: {guessed_letters}')
+    guessed_letters.add(guess)
     if '_' in display and have_lives:
         continue
     elif not have_lives:

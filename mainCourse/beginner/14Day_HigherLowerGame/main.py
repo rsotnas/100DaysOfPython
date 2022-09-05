@@ -40,6 +40,7 @@ while game_should_continue:
 
   is_correct = check_answer(guess, account_a['follower_count'], account_b['follower_count'])
   os.system('cls||clear')
+  print(logo)
   if is_correct:
     score += 1
     print(f"You're right! Your current score is {score}.")

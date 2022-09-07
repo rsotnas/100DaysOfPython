@@ -13,6 +13,16 @@ def format_data(account):
   return f"{account_name}, a {account_description}, from {account_country}"
 
 def check_answer(guess, a_followers, b_followers):
+  """_summary_
+
+  Args:
+      guess (_type_): _description_
+      a_followers (_type_): _description_
+      b_followers (_type_): _description_
+
+  Returns:
+      _type_: _description_
+  """
   if a_followers > b_followers:
     return guess == "a"
   else:
